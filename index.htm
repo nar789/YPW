@@ -1,0 +1,30 @@
+<html>
+
+
+	<head>
+	 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	    <meta charset="utf-8">
+		<title>ypw viewer</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+
+
+	<body>
+		<div id=sql>
+			<p class=sqlname>SELECT&nbsp&nbsp</p><input type=text placeholder="#id,lat,lng" id="select"><br>
+			<p class=sqlname>FROM&nbsp&nbsp</p><input type=text placeholder="#Twitter" id="from"><br>
+			<p class=sqlname>WHERE&nbsp&nbsp</p><input type=text placeholder="#id = 3 and lat > 20" id="where"><br><br>
+			<center><button id=send onclick='send()'>SEND&nbsp&nbsp</button></center>
+		</div>
+
+	 	<div id="map"></div>
+
+	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 	<script src="js/index.js"></script>
+	 	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTDuJrPmhO00RQAOo5JmEXS2bBaGl9d2U&callback=initMap"></script>
+
+	</body>
+
+
+</html>
