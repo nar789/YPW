@@ -39,7 +39,7 @@ public class Main {
 
         port(8080);
         WordCount wordcount=new WordCount();
-        init();
+        //init();
 
         get("/spark",(req,res)->"TEST");
 

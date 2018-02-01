@@ -17,7 +17,6 @@ import org.apache.spark.api.java.JavaRDD;
 
 
 public class WordCount {
-    //public static WordCount instance = new WordCount();
     SpatialWebSparkQueryTest swt;
     SpatialRDD swRDD;
     WebClassTest test;
