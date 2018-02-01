@@ -1,0 +1,66 @@
+<html>
+
+
+	<head>
+	 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	    <meta charset="utf-8">
+		<title>ypw viewer</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+
+
+	<body>
+		<b><div id=titlebar>SKSpark(SpatialKeywordSpark)</div><b>
+		<b  onclick='runningtime_click()'><div id='runningtime'></div></b>
+		<div id=sql>
+			<b><p class=title id=conf-title>Configuration</p></b>
+			<div id=conf>
+				<b><p class=sqlname>INDEX</p></b>
+				<input type=checkbox value='qptree' name='index' checked>QP-Tree<br>
+				<input type=checkbox value='rtree' name='index'>R-Tree<br>
+				<input type=checkbox value='quadtree' name='index'>Quad-Tree<br><br>
+
+				<b><p class=sqlname>Partition</p></b>
+				<input type=checkbox value='bsp' name='partition' checked>BSP<br>
+				<input type=checkbox value='str' name='partition'>STR<br><br>
+				<button id=initsend onclick='initsend()'>Initialize</button>
+			</div>
+
+			<b><p class=title id=query-title>Query</p></b>
+			<div id=query>
+				<b><p class=sqlname>SELECT</p></b>
+				<input type=checkbox value='ID' name='select' checked>ID
+				<input type=checkbox value='WORD' name='select'>WORD<br><br>
+
+				<b><p class=sqlname>FROM</p></b>
+				<input type=radio value='ID' name='from' checked>TWITTER
+				<input type=radio value='ID' name='from' checked>EDGE<br>	<br>		
+
+				<b><p class=sqlname>WHERE</p></b>
+				<input type=radio value='ID' name='where' checked onchange="BRQCheck()">BRQ<br>
+				<textarea id=brqtext class=wheretext placeholder="35.56, 128.12, 39.11, 111.14, obama"></textarea><br>	
+				<input type=radio value='ID' name='where' onchange="BKQCheck()">BKQ<br>
+				<textarea id=bkqtext class=wheretext placeholder="35.56, 128.12, 10, obama"></textarea><br>	
+				<input type=radio value='ID' name='where' onchange="RangeCheck()">Range<br>
+				<textarea id=rangetext class=wheretext placeholder="35.56, 128.12"></textarea><br>	
+				<input type=radio value='ID' name='where' onchange="IntersectCheck()">Intersect<br>
+				<textarea id=intersecttext class=wheretext placeholder="35.56, 128.12"></textarea><br>	
+				<button id=send onclick='send()'>Send Query</button>
+			</div>
+		</div>
+
+	 	<div id="map"></div>
+	 	
+
+	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+	 	<script src="js/initmap.js"></script>
+	 	<script src="js/index.js"></script>
+	    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTDuJrPmhO00RQAOo5JmEXS2bBaGl9d2U&callback=initMap"></script>
+
+
+
+	</body>
+
+
+</html>
